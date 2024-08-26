@@ -1,7 +1,6 @@
 package com.bortoletti.api.endereco;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record DadosEndereco(
@@ -12,7 +11,7 @@ public record DadosEndereco(
         String bairro,
 
         @NotBlank
-        @Pattern(regexp ="\\d{8}")
+        @Pattern(regexp = "\\d{8}")
         String cep,
 
         @NotBlank
