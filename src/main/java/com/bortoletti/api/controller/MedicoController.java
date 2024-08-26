@@ -6,6 +6,8 @@ import com.bortoletti.api.medico.Medico;
 import com.bortoletti.api.medico.MedicoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +26,14 @@ public class MedicoController {
         repository.save(new Medico(dados));
     }
 
-    @GetMapping
+    /*@GetMapping
     public List<DadosListagemMedico> listar(){
        return repository.findAll().stream().map(DadosListagemMedico::new).toList(); //converte lista de medicos para DadosListamMedico
+    }*/
+
+    //paginacao
+    @GetMapping
+    public Page<DadosListagemMedico> listar(Pageable pagincao){
+        return repository.findAll(pagincao).map(DadosListagemMedico::new);
     }
 }
