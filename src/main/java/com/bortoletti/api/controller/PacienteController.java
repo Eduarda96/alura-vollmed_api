@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("paciente")
-public class pacienteController {
+public class PacienteController {
     @PostMapping
     public void cadastrar(@RequestBody DadosPaciente dados){
         System.out.println(dados);
