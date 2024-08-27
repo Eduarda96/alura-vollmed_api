@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.slf4j.spi.MDCAdapter;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -27,15 +26,16 @@ public class Medico {
     private Especialidade especialidade;
     @Embedded
     private Endereco endereco;
+    private boolean ativo;
 
     public Medico(DadosCadastroMedico dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
-
     }
 
     public void atualizarInformacoes(@Valid DadosAtualizacaoMedico dados) {
@@ -48,5 +48,9 @@ public class Medico {
         if (dados.endereco() != null) {
             this.endereco.atualizarInformacaoes(dados.endereco());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
