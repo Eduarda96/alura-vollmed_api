@@ -2,10 +2,12 @@ package com.bortoletti.api.medico;
 
 import com.bortoletti.api.endereco.Endereco;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.slf4j.spi.MDCAdapter;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -34,5 +36,17 @@ public class Medico {
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
 
+    }
+
+    public void atualizarInformacoes(@Valid DadosAtualizacaoMedico dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+        if (dados.endereco() != null) {
+            this.endereco.atualizarInformacaoes(dados.endereco());
+        }
     }
 }
