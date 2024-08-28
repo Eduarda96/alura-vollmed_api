@@ -1,9 +1,6 @@
 package com.bortoletti.api.controller;
 
-import com.bortoletti.api.paciente.DadosListagemPaciente;
-import com.bortoletti.api.paciente.DadosPaciente;
-import com.bortoletti.api.paciente.Paciente;
-import com.bortoletti.api.paciente.PacienteRepository;
+import com.bortoletti.api.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -28,5 +25,12 @@ public class PacienteController {
     @GetMapping
     public List<DadosListagemPaciente> listar(@PageableDefault(size = 10, sort = {"nome"})  Pageable paginacao){
         return repository.findAll(paginacao).map(DadosListagemPaciente::new).toList();
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizaPaciente dados){
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atualizarInformacoes(dados);
     }
 }
