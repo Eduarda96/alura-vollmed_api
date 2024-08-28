@@ -22,6 +22,7 @@ public class Paciente {
     private String telefone;
     @Embedded
     private Endereco endereco;
+    private boolean ativo = true;
 
     public Paciente(DadosPaciente dados) {
         this.nome = dados.nome();
@@ -40,5 +41,9 @@ public class Paciente {
         if (dados.email() != null) {
             this.email = dados.email();
         }
+    }
+
+    public void inativarPaciente() {
+        this.ativo = false;
     }
 }
