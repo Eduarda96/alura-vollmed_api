@@ -74,5 +74,20 @@ public class MedicoController {
         return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
     }
 
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity ativarMedico(@PathVariable Long id) {
+        var medico = repository.getReferenceById(id);
+        medico.ativar();
+        return ResponseEntity.ok(new DadosMedicoAtivado(medico));
+    }
+
+    @GetMapping("/listaInativos")
+    public ResponseEntity<Page<DadosListagemMedico>> listarInativos(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+        var medicosInativos = repository.findAllByAtivoFalse(paginacao).map(DadosListagemMedico::new);
+        return ResponseEntity.ok(medicosInativos);
+
+    }
+
 
 }
