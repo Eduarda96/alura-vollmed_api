@@ -46,4 +46,8 @@ public class Paciente {
     public void inativarPaciente() {
         this.ativo = false;
     }
+
+    public void ativar() {
+        this.ativo = true;
+    }
 }
