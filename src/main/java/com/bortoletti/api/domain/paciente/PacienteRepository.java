@@ -1,4 +1,4 @@
-package com.bortoletti.api.paciente;
+package com.bortoletti.api.domain.paciente;
 
 
 import org.springframework.data.domain.Page;

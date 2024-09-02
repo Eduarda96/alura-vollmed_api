@@ -1,4 +1,4 @@
-package com.bortoletti.api.medico;
+package com.bortoletti.api.domain.medico;
 
 public enum Especialidade {
     ORTOPEDIA,

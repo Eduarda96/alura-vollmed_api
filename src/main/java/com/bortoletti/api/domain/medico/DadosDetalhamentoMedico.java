@@ -1,6 +1,6 @@
-package com.bortoletti.api.medico;
+package com.bortoletti.api.domain.medico;
 
-import com.bortoletti.api.endereco.Endereco;
+import com.bortoletti.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoMedico(Long id, String nome, String crm, String email,
                                       String telefone, Especialidade especialidade, Endereco endereco) {

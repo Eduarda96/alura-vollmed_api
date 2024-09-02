@@ -1,6 +1,6 @@
-package com.bortoletti.api.medico;
+package com.bortoletti.api.domain.medico;
 
-import com.bortoletti.api.endereco.Endereco;
+import com.bortoletti.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

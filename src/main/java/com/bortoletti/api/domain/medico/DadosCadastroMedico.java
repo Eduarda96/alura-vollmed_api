@@ -1,6 +1,6 @@
-package com.bortoletti.api.medico;
+package com.bortoletti.api.domain.medico;
 
-import com.bortoletti.api.endereco.DadosEndereco;
+import com.bortoletti.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

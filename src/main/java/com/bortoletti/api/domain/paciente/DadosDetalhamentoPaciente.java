@@ -1,6 +1,6 @@
-package com.bortoletti.api.paciente;
+package com.bortoletti.api.domain.paciente;
 
-import com.bortoletti.api.endereco.Endereco;
+import com.bortoletti.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoPaciente(Long id, String nome, String email, String telefone, Endereco endereco) {
     public DadosDetalhamentoPaciente(Paciente paciente) {

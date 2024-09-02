@@ -1,4 +1,4 @@
-package com.bortoletti.api.paciente;
+package com.bortoletti.api.domain.paciente;
 
 import jakarta.validation.constraints.NotNull;
 

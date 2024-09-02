@@ -1,4 +1,4 @@
-package com.bortoletti.api.endereco;
+package com.bortoletti.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
