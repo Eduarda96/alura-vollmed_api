@@ -1,4 +1,4 @@
-package com.bortoletti.api.medico;
+package com.bortoletti.api.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

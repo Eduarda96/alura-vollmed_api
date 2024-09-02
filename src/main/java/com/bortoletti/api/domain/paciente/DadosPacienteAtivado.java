@@ -1,4 +1,4 @@
-package com.bortoletti.api.paciente;
+package com.bortoletti.api.domain.paciente;
 
 public record DadosPacienteAtivado(Long id, String nome, String email, boolean ativo) {
     public DadosPacienteAtivado(Paciente paciente) {

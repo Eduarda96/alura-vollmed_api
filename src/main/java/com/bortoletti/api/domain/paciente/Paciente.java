@@ -1,6 +1,6 @@
-package com.bortoletti.api.paciente;
+package com.bortoletti.api.domain.paciente;
 
-import com.bortoletti.api.endereco.Endereco;
+import com.bortoletti.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

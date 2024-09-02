@@ -1,6 +1,6 @@
 package com.bortoletti.api.controller;
 
-import com.bortoletti.api.paciente.*;
+import com.bortoletti.api.domain.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

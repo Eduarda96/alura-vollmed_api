@@ -1,7 +1,6 @@
-package com.bortoletti.api.medico;
+package com.bortoletti.api.domain.medico;
 
-import com.bortoletti.api.endereco.DadosEndereco;
-import jakarta.validation.constraints.NotBlank;
+import com.bortoletti.api.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoMedico(
